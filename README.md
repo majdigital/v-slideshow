@@ -3,11 +3,9 @@
 VSlideshow is a customizable carousel. Focus on the transitions and the layout, VSlideshow will take care of the rest
 Under the hood, VSlideshow uses the built-in component `<TransitionGroup>` from Vue.js.
 
-<ul>
-  <li>[Download and import](#download-and-import)</li>
-  <li>[Getting started](#getting-started)</li>
-  <li>[Examples](#examples)</li>
-</ul>
+[Download and import](#download-and-import)
+[Getting started](#getting-started)
+[Examples](#examples)
 
 ## Download and import
 
