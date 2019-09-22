@@ -1,0 +1,37 @@
+{
+  "name": "v-slideshow",
+  "version": "0.1.1",
+  "description": "A slideshow for Vue.js focused on custom transitions and layout",
+  "main": "dist/v-slideshow.umd.js",
+  "module": "dist/v-slideshow.esm.js",
+  "unpkg": "dist/v-slideshow.min.js",
+  "browser": {
+    "./sfc": "src/v-slideshow.vue"
+  },
+  "scripts": {
+    "serve": "vue serve --open examples/index.vue",
+    "build": "npm run build:umd && npm run build:es && npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/v-slideshow.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/v-slideshow.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/v-slideshow.min.js"
+  },
+  "keywords": [
+    "vue",
+    "slideshow",
+    "transition",
+    "customizable"
+  ],
+  "author": "Mickael Chanrion",
+  "license": "MIT",
+  "devDependencies": {
+    "animejs": "^3.1.0",
+    "rollup": "^1.21.4",
+    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-nodent": "^0.2.2",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-vue": "^5.0.1",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
