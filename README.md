@@ -3,6 +3,12 @@
 VSlideshow is a customizable carousel. Focus on the transitions and the layout, VSlideshow will take care of the rest
 Under the hood, VSlideshow uses the built-in component `<TransitionGroup>` from Vue.js.
 
+<ul>
+  <li>[Download and import](#download-and-import)</li>
+  <li>[Getting started](#getting-started)</li>
+  <li>[Examples](#examples)</li>
+</ul>
+
 ## Download and import
 
 ```sh
@@ -93,32 +99,32 @@ Via script:
 
 ### Props
 
-| Property  | Description                                                                   | Type                  | Default    |
-| --------- | ----------------------------------------------------------------------------- | --------------------- | ---------- |
-| value     | The index of the current slide                                                | Number                | `0`        |
-| slides    | An array of slides                                                            | Array                 | `required` |
-| loop      | Make a loop whenever the carousel reaches the end                             | Boolean               | `true`     |
-| safe      | Prevents the carousel to change the slide while there is a transition running | Boolean               | `true`     |
-| listClass | Class list applied on the list of the slides                                  | String, Array, Object | `null`     |
-| itemClass | Class list applied on each slide                                              | String, Array, Object | `null`     |
+| Property  | Description                                                                    | Type                  | Default    |
+| --------- | ------------------------------------------------------------------------------ | --------------------- | ---------- |
+| value     | The index of the current slide                                                 | Number                | `0`        |
+| slides    | An array of slides                                                             | Array                 | `required` |
+| loop      | Make a loop whenever the slideshow reaches the end                             | Boolean               | `true`     |
+| safe      | Prevents the slideshow to change the slide while there is a transition running | Boolean               | `true`     |
+| listClass | Class list applied on the list of the slides                                   | String, Array, Object | `null`     |
+| itemClass | Class list applied on each slide                                               | String, Array, Object | `null`     |
 
 > ⚠️ The prop `slides` must by an array of objects.
 > Each slide must contain a unique ID because of `TransitionGroup`. [nanoid](https://github.com/ai/nanoid) is a good option if you need to generate an ID.
 
 ### Events
 
-| Event           | Description                                                          | Parameters                                            |
-| --------------- | -------------------------------------------------------------------- | ----------------------------------------------------- |
-| before-enter    | Before slide enter                                                   | data: Object                                          |
-| enter           | On slide enter, make sure to call `done` when the transition is done | <ul><li>data: Object</li><li>done: Function</li></ul> |
-| after-enter     | After slide enter                                                    | data: Object                                          |
-| enter-cancelled | On cancellation of slide enter                                       | data: Object                                          |
-| before-leave    | Before slide leave                                                   | data: Object                                          |
-| leave           | On slide leave, make sure to call `done` when the transition is done | <ul><li>data: Object</li><li>done: Function</li></ul> |
-| after-leave     | After slide leave                                                    | data: Object                                          |
-| leave-cancelled | On cancellation of slide leave                                       | data: Object                                          |
-| done            | When enter and leave transitions are done                            | data: Object                                          |
-| input           | When the current slide index changes                                 | value: Number                                         |
+| Event           | Description                                                          | Parameters                                                |
+| --------------- | -------------------------------------------------------------------- | --------------------------------------------------------- |
+| before-enter    | Before slide enter                                                   | [data](#composition-of-data): Object                      |
+| enter           | On slide enter, make sure to call `done` when the transition is done | [data](#composition-of-data): Object <br/> done: Function |
+| after-enter     | After slide enter                                                    | [data](#composition-of-data): Object                      |
+| enter-cancelled | On cancellation of slide enter                                       | [data](#composition-of-data): Object                      |
+| before-leave    | Before slide leave                                                   | [data](#composition-of-data): Object                      |
+| leave           | On slide leave, make sure to call `done` when the transition is done | [data](#composition-of-data): Object <br/> done: Function |
+| after-leave     | After slide leave                                                    | [data](#composition-of-data): Object                      |
+| leave-cancelled | On cancellation of slide leave                                       | [data](#composition-of-data): Object                      |
+| done            | When enter and leave transitions are done                            | [data](#composition-of-data): Object                      |
+| input           | When the current slide index changes                                 | value: Number                                             |
 
 #### Composition of `data`
 
@@ -137,7 +143,7 @@ Via script:
 
 The content for each slide.
 
-##### data
+##### slot props
 
 | Property      | Description                            | Type     |
 | ------------- | -------------------------------------- | -------- |
@@ -156,9 +162,9 @@ The content for each slide.
 
 The content for the nav.
 
-##### data
+##### slot props
 
-Same as default except that there is no `slide` or `index`.
+Same as default slot except that there is no `slide` or `index`.
 
 ### Methods
 
