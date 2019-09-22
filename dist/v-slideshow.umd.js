@@ -1,3 +1,9 @@
+/*!
+    * v-slideshow v1.0.0
+    * (c) 2019 Maj Digital,Mickael Chanrion <mickael@maj.digital>
+    * Released under the MIT license
+    */
+  
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :

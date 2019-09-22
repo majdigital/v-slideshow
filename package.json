@@ -1,6 +1,6 @@
 {
   "name": "v-slideshow",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "A slideshow for Vue.js focused on custom transitions and layout",
   "main": "dist/v-slideshow.umd.js",
   "module": "dist/v-slideshow.esm.js",
@@ -21,7 +21,10 @@
     "transition",
     "customizable"
   ],
-  "author": "Mickael Chanrion",
+  "author": [
+    "Maj Digital",
+    "Mickael Chanrion <mickael@maj.digital>"
+  ],
   "license": "MIT",
   "devDependencies": {
     "animejs": "^3.1.0",

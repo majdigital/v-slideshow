@@ -1,3 +1,9 @@
+/*!
+    * v-slideshow v1.0.0
+    * (c) 2019 Maj Digital,Mickael Chanrion <mickael@maj.digital>
+    * Released under the MIT license
+    */
+  
 var script = {
     props: {
         value: {
